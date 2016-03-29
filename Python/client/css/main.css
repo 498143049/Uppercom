@@ -1,0 +1,38 @@
+.formbackground{
+	position:absolute; 
+	height:100%;
+	width:100%;
+	z-index: -1;
+}
+.buttom{
+	 position:fixed;
+	 bottom:0;
+	 background-color: #fb5a51;
+	 width: 100%
+}
+p{
+  font-family: "微软雅黑";
+  margin :3px ;
+  text-align:center;
+}
+.buttom p{
+	color: white;
+	font-size: 18px;
+	line-height: 30px;
+}
+.hang{
+	width: 535px;
+	height: 375px;
+	background-color: white;
+	margin :0px auto;
+}
+.content{
+	width: 100%；
+	height:100%;
+	background-color: red;
+}
+.hang1{
+	width: 50px;
+	height: 100px;
+	margin :0px auto;
+}

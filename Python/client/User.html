@@ -1,12 +1,27 @@
-<script type="text/javascript" src="http://cdn.bootcss.com/socket.io/1.3.7/socket.io.js"></script>
-<script type="text/javascript" charset="utf-8">
-    var socket = io.connect('http://127.0.0.1:80');
-    socket.on('connect', function() {
-         console.log('Time Start');
-    });
-    socket.on('SendData', function(data) {
-    	  var myDate = new Date();
-          console.log(data);
-          console.log(myDate.getSeconds());
-    });
+<!DOCTYPE html>
+<html>
+<head>
+<title>上位机展示图</title>
+<link href="css/main.css" rel="stylesheet" type="text/css" > 
+<link href="css/normalize.css" rel="stylesheet" type="text/css" > 
+<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>  <!--  嵌入jquery -->
+</head>
+<body>
+  <div class="formbackground">
+  	<img src="pic/background.jpg" height="100%" width="100%" />
+
+  </div>
+  <div class="hang1"></div>
+  <div class="hang"></div>
+
+  <div class="buttom">
+  	<p>@write by du bing </p>
+  </div>   
+<script type="text/javascript">
+// $(function(){
+//     $('#formbackground').height($(window).height());
+//     $('#formbackground').width($(window).width());
+// });
 </script>
+</body>
+</html>
