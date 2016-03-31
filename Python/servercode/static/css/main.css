@@ -1,0 +1,95 @@
+.formbackground{
+	position:absolute; 
+/*	height:100%;
+	width:100%;*/
+	z-index: -1;
+}
+.buttom{
+	 position:fixed;
+	 bottom:0;
+	 background-color: #fb5a51;
+	 width: 100%
+}
+p{
+  font-family: "微软雅黑";
+  margin :3px ;
+  text-align:center;
+}
+.buttom p{
+	color: white;
+	font-size: 18px;
+	line-height: 30px;
+}
+.hang{
+	width: 500px;
+	height: 300px;
+	background-color: white;
+	margin :-95px auto;
+	padding-top:100px;
+}
+.content{
+	width: 100%；
+	height:100%;
+	background-color: red;
+}
+.hang1{
+	width: 50px;
+	height: 50px;
+	margin :0px auto;
+}
+.circle { 
+width: 164px; 
+height: 164px; 
+background-color: white; 
+-webkit-border-radius: 82px; 
+margin: 0px auto;
+}
+.circle img{
+	vertical-align: middle; /*图片垂直居中*/
+	margin:  auto;
+}
+.circle a{
+	    width: 164px;
+	    height: 164px;
+		display: table-cell;/*图片容器以表格的单元格形式显示*/
+		text-align: center; /* 实现水平居中 */
+		vertical-align: middle; /*实现垂直居中*/
+}
+
+.hang p{
+	color: black;
+	font-size: 36px;
+}
+.hang input{
+	height: 30px;
+    display: line;
+    border-width:1px;
+	border-style:solid;
+}
+.input{
+	margin: 30px auto;
+	width: 361px;
+
+}
+.input p{
+	display: inline;
+}
+#address{
+	  width: 220px;
+}
+#port{
+	width: 100px;
+}
+.login{
+	width: 362px;
+	height: 56px;
+	background-color: #fb5a51;
+	margin: 50px auto 0px auto;
+	-webkit-border-radius: 20px; 
+}
+.login p{
+   color:white;
+   font-size: 30px;
+   line-height: 56px;
+}
+
