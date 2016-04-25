@@ -110,7 +110,7 @@ desired effect
 
     <!-- Main content -->
     <section class="content">
-    <input class="slider"/>
+  <!--   <input class="slider"/> -->
       <!-- Your Page Content Here -->
       <div id="container"></div>
 
@@ -152,15 +152,5 @@ desired effect
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the
      fixed layout. -->
-<script type="text/javascript">
-$(function(){
-    var quanju;
-    var socket = io.connect('http://127.0.0.1:5000');
-      socket.on('connect', function() {
-        console.log('ok');
-        socket.emit('my event', { my: 'data' });
-     });
-  });
-</script>
 </body>
 </html>
