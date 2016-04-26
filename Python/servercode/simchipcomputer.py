@@ -2,6 +2,7 @@
 from time import sleep, ctime
 import serial
 import threading
+import random
 port='com4';
 baudrate=9600;
 Myserial = serial.Serial(port,baudrate); 
@@ -22,7 +23,7 @@ if __name__ == '__main__':
 
    try:
    	while(True):
-   		Myserial.write(bytes([1]));
+   		Myserial.write(bytes([random.randint(0, 255)]));
    		sleep(0.1)
    except KeyboardInterrupt :
    	Myserial.close()
