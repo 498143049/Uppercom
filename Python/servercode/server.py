@@ -23,8 +23,13 @@ def BackRead():
 	global Myserial
 	print("I am Raad");
 	while True:
-		b = Myserial.read(Myserial.in_waiting or 1)
 		time.sleep(0.1)
+		count = Myserial.inWaiting()  
+		if count != 0:
+			recv = Myserial.read(count)
+			print("%d,%d"%(recv[0],len(recv)));
+			Myserial.flushInput()
+		
 
 @app.route('/')
 def index():
@@ -40,16 +45,21 @@ def handle_my_custom_event(json):
     # print('received json:'+str(json));
 if __name__ == '__main__':
 
-  # Myserial = serial.Serial('com5',9600); #全局
-  # thread1 = threading.Thread(target=BackRead)
-  # thread1.setDaemon(1)
-  # thread1.start()
-  socketio.run(app,debug=True)
-
-  # th1=threading.Thread(target = socketio.run, args = (app,) ,kwargs = {'debug':'true'})
-  # th1.setDaemon(True) 
-  # th1.start()
-  # while True:
-  # 	pass
+  th1=threading.Thread(target = socketio.run, args = (app,) ,kwargs = {'debug':'true'})
+  th1.setDaemon(True) 
+  th1.start()
+  Myserial = serial.Serial('com5',9600); #全局
+  thread1 = threading.Thread(target=BackRead)
+  thread1.setDaemon(1)
+  thread1.start()
+  # socketio.run(app,debug=True)
+  try:
+  	while True:
+  		Myserial.write(bytes([36,36,36]));
+  		time.sleep(1)
+  		pass
+  except KeyboardInterrupt:
+  	Myserial.close()
+  	print ("Off ")
   # threaded参数是为了并发访问 
 

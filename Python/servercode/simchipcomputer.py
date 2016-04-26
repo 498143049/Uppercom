@@ -22,8 +22,8 @@ if __name__ == '__main__':
 
    try:
    	while(True):
-   		Myserial.write(bytes([36,36,36]));
-   		sleep(2)
+   		Myserial.write(bytes([1]));
+   		sleep(0.1)
    except KeyboardInterrupt :
    	Myserial.close()
    	print ("Off ")
