@@ -27,7 +27,7 @@ def BackRead():
 		count = Myserial.inWaiting()  
 		if count != 0:
 			recv = Myserial.read(count)
-			print("%d,%d"%(recv[0],len(recv)));
+			print("%d,%d,%d"%(recv[0],recv[1],len(recv)));
 			Myserial.flushInput()
 		
 
@@ -45,24 +45,28 @@ def handle_my_custom_event(json):
 	# print('I am starting')
     # print('received json:'+str(json));
 if __name__ == '__main__':
-
-  th1=threading.Thread(target = socketio.run, args = (app,) ,kwargs = {'debug':'true'})
+  # socketio.run(app);
+  th1=threading.Thread(target = socketio.run, args = (app,) ,kwargs = {'debug':'true','host':'0.0.0.0', 'port':80})
   th1.setDaemon(True) 
   th1.start()
-  Myserial = serial.Serial('com5',9600); #全局
+  Myserial = serial.Serial('com7',9600); #全局
   # thread1 = threading.Thread(target=BackRead)
   # thread1.setDaemon(1)
   # thread1.start()
   # socketio.run(app,debug=True)
   try:
-  	while True:
-  		count = Myserial.inWaiting()  
-  		if count != 0:
-  			recv = Myserial.read(count)
-  			print("%d,%d"%(recv[0],len(recv)));
-  			Myserial.flushInput()
-  			socketio.emit('news',{'data':recv[0]/100.0});
-  		time.sleep(0.05)
+    # while True:
+    #   time.sleep(0.1);
+    #   pass
+    while True:
+      count = Myserial.inWaiting();
+      if count != 0:
+        recv = Myserial.read(count);
+        if recv[1]==(recv[0]+1) and recv[2]==(recv[0]-1) :
+          print("%d,%d,%d,%d"%(recv[0],recv[1],recv[2],len(recv)));
+          Myserial.flushInput();
+          socketio.emit('news',{'data':recv[0]*5/255.0});
+      time.sleep(0.04);
   except KeyboardInterrupt:
   	Myserial.close()
   	print ("Off ")

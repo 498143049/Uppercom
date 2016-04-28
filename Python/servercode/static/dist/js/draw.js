@@ -19,7 +19,7 @@
             }
           dataCount+=0.01;                                     
         };
-    var socket = io.connect('http://127.0.0.1:5000');
+    var socket = io.connect('http://dubing.eicp.net:16918/');
       socket.on('connect', function() {
         console.log('ok');
         socket.emit('my event', { my: 'data' });
@@ -32,9 +32,9 @@
              selection : {
             mode : 'x'
         },
-            HtmlText:false,   
+            HtmlText:false,
              yaxis : {
-               max : 255,
+               max : 5,
                min : 0
              }
            }
