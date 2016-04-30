@@ -23,7 +23,7 @@ if __name__ == '__main__':
 
    try:
    	while(True):
-   		Myserial.write(bytes([random.randint(0, 255)]));
+   		Myserial.write(bytes([50,51,49]));
    		sleep(0.1)
    except KeyboardInterrupt :
    	Myserial.close()
