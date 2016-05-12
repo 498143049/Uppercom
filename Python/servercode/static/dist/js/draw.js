@@ -19,7 +19,7 @@
             }
           dataCount+=0.01;                                     
         };
-    var socket = io.connect('http://192.168.1.101:80/');
+    var socket = io.connect('http://192.168.1.104:80/');
       socket.on('connect', function() {
         console.log('ok');
         socket.emit('my event', { my: 'data' });
