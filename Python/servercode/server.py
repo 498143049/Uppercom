@@ -23,12 +23,13 @@ def BackRead():
 	global Myserial
 	print("I am Raad");
 	while True:
-		time.sleep(0.1)
+		time.sleep(0.05)
 		count = Myserial.inWaiting()
 		if count != 0:
 			recv = Myserial.read(count)
 			print("%d,%d,%d"%(recv[0],recv[1],len(recv)));
-			socketio.emit('news',{'data': recv[0]/50});
+			if recv[0]==(recv[1]-1):
+				socketio.emit('news',{'data': 5*recv[0]/255});
 			Myserial.flushInput()
 		
 
@@ -36,7 +37,7 @@ def BackRead():
 def index():
     global Myserial
     if Myserial==None:
-        Myserial = serial.Serial('com3',9600); #全局
+        Myserial = serial.Serial('com6',9600); #全局
         print ("open")
         th1=threading.Thread(target=BackRead)
         th1.setDaemon(True) 

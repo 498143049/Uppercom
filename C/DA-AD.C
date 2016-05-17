@@ -115,9 +115,8 @@ void T0_interrupt(void) interrupt 1
 		{
 			xx=1;
 		}
-		SendOneByte(xx);                //进行串口发送数据
-		SendOneByte(xx+1); 
-		SendOneByte(xx-1);    
+		SendOneByte(xx);                //进行串口发送数据  
+		SendOneByte(xx+1);                //进行串口发送数据  
 	}
 }
 void UartInit(void)		//9600bps@11.0592MHz

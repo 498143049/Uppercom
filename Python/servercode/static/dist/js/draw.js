@@ -19,7 +19,9 @@
             }
           dataCount+=0.01;                                     
         };
-    var socket = io.connect('http://192.168.1.104:80/');
+    // var socket = io.connect('http://127.0.0.1:80/');
+     var socket = io.connect('http://192.168.1.100:80/');
+     // var socket = io.connect('http://qq498143049.imwork.net/');
       socket.on('connect', function() {
         console.log('ok');
         socket.emit('my event', { my: 'data' });
